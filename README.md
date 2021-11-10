@@ -5,9 +5,9 @@ This small repository is to reproduce an issue that we found out in Amadeus and 
 On the local.settings.json, fill the 3 settings :
 * AzureWebJobsStorage (nothing particular, just EH needs a Storage)
 * AzureEventHubOne (the Connection String to your Event Hub, not only Event Hub Namespace. It needs to contain the EntityPath) :
-    Endpoint=sb://<EHNAMESPACE>.servicebus.windows.net/;SharedAccessKeyName=<SAS>;SharedAccessKey=<KEY>;EntityPath=<TOPIC1>
+    Endpoint=sb://EHNAMESPACE.servicebus.windows.net/;SharedAccessKeyName=SAS;SharedAccessKey=KEY;EntityPath=TOPIC1
 * AzureEventHubTwo (same as above, but use a different topic)
-    Endpoint=sb://<EHNAMESPACE>.servicebus.windows.net/;SharedAccessKeyName=<SAS>;SharedAccessKey=<KEY>;EntityPath=<TOPIC2>
+    Endpoint=sb://EHNAMESPACE.servicebus.windows.net/;SharedAccessKeyName=SAS;SharedAccessKey=KEY;EntityPath=TOPIC2
 
 You would see an output like this :
 ```
@@ -33,9 +33,9 @@ As you can see above, even if the HttpTrigger function is setting values for out
 On the local.settings.json, fill the 3 settings :
 * AzureWebJobsStorage (nothing particular, just EH needs a Storage)
 * AzureEventHubOne (the Connection String to your Event Hub Namespace. Do not specify the Entity Path) :
-    Endpoint=sb://<EHNAMESPACE>.windows.net/;SharedAccessKeyName=<SAS>;SharedAccessKey=<KEY>
+    Endpoint=sb://EHNAMESPACE.windows.net/;SharedAccessKeyName=SAS;SharedAccessKey=KEY
 * AzureEventHubTwo (same as above, but use a different topic)
-    Endpoint=sb://<EHNAMESPACE>.windows.net/;SharedAccessKeyName=<SAS>;SharedAccessKey=<KEY>
+    Endpoint=sb://EHNAMESPACE.windows.net/;SharedAccessKeyName=SAS;SharedAccessKey=KEY
 
 In the EventHub binding, you define the eventHubName parameter, like :
 
