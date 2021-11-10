@@ -1,5 +1,5 @@
 # msft_multi_ehnamespace
-This small repository is to reproduce an issue that we found out in Amadeus and it seems not documented (or at least we did not find any explanation for it).
+This small repository is to reproduce an issue that we found out in Amadeus and it seems not documented (or at least we did not find any explanation for it). It is unclear why the binding does not respect the entity path in the connection string if one is specified when using more than one Event Hub. If using only one Event Hub with EntityPath, it works fine.
 
 # To reproduce failure :
 On the local.settings.json, fill the 3 settings :
